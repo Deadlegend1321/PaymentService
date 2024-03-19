@@ -1,5 +1,8 @@
 package com.mudit.paymentservice.paymentgateways;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class PaymentGatewayStrategyChooser {
 
     private RazorpayPaymentGateway razorpayPaymentGateway;
@@ -12,6 +15,13 @@ public class PaymentGatewayStrategyChooser {
     }
 
     public PaymentGateway getBestPaymentGateway() {
+        //        int randomInt = new Random().nextInt();
+//
+//        if (randomInt % 2 == 0) {
+//            return razorpayPaymentGateway;
+//        }
+//
+//        return stripePaymentGateway;
         return razorpayPaymentGateway;
     }
 }

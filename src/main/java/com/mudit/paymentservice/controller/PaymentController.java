@@ -19,6 +19,9 @@ public class PaymentController {
 
     @PostMapping("/")
     public String initiatePayment(@RequestBody InitiatePaymentDTO initiatePaymentDTO) {
-        return "Payment initiated successfully";
+        return paymentService.initiatePayment(initiatePaymentDTO.getOrderId(),
+                initiatePaymentDTO.getEmail(),
+                initiatePaymentDTO.getPhoneNumber(),
+                initiatePaymentDTO.getAmount());
     }
 }
